@@ -1,0 +1,1 @@
+This is collections of famous sorts with a client for comparing the performance of each on your machine and a graphical representation of what is happening while the algorithm is working on the sorting task. I love to get feedback on it.

@@ -12,15 +12,15 @@ public class Selection {
 
         for (int i = 0; i < N; i++) {
             int min = i;
-            show(a, 0);
+            //show(a, 0);
             for (int j = i + 1; j < N; j++) {
                 if (less(a[j], a[min])) {
                     min = j;
-                    show(a, min);
+                    //show(a, min);
                 }
             }
             exch(a, i, min);
-            show(a, min);
+            //show(a, min);
         }
     }
 

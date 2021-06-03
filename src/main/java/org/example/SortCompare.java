@@ -15,6 +15,8 @@ public class SortCompare {
     }
 
     public static double timeRandomInput(String alg, int N, int T) {
+        /* N is number of items in the array and T is how many rounds
+        * you want to do this */
         double total = 0.0;
         Double[] a = new Double[N];
         for (int t = 0; t < T; t++) {
@@ -26,13 +28,32 @@ public class SortCompare {
     }
 
     public static void main(String[] args) {
-        String alg1 = args[0];
-        String alg2 = args[1];
-        int N = Integer.parseInt(args[2]);
-        int T = Integer.parseInt(args[3]);
-        double t1 = timeRandomInput(alg1, N, T);
-        double t2 = timeRandomInput(alg2, N, T);
-        StdOut.printf("For %d random Doubles\n  %s is", N, alg1);
-        StdOut.printf(" %.1f times faster than %s\n", t2 / t1, alg2);
+//        String alg1 = args[0];
+//        String alg2 = args[1];
+//        int N = Integer.parseInt(args[2]);
+//        int T = Integer.parseInt(args[3]);
+        String alg1 = "Shell";
+        String alg2 = "Insertion";
+        String alg3 = "Selection";
+        int [] sizes = {128, 256, 512, 1024, 2048, 4096, 8192, 16384, 32768};
+        for (int size: sizes) {
+            int N = size;
+            int T = 100;
+            double t1 = timeRandomInput(alg1, N, T);
+            double t2 = timeRandomInput(alg2, N, T);
+            StdOut.printf("For %d random Doubles\n  %s is", N, alg1);
+            StdOut.printf(" %.1f times faster than %s\n", t2 / t1, alg2);
+        }
+        for (int size: sizes) {
+            int N = size;
+            int T = 100;
+            double t1 = timeRandomInput(alg1, N, T);
+            double t2 = timeRandomInput(alg3, N, T);
+            StdOut.printf("For %d random Doubles\n  %s is", N, alg1);
+            StdOut.printf(" %.1f times faster than %s\n", t2 / t1, alg3);
+        }
+
+
+
     }
 }
